@@ -1,0 +1,229 @@
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*se utiliza mobile first*/
+/*estilos generales*/
+body {
+    /*background-color: #eceef3;*/
+    font-family: 'Roboto', sans-serif;
+    background: rgb(224,197,181);
+    background: linear-gradient(90deg, rgba(224,197,181,1) 10%, rgba(234,216,206,1) 35%, rgba(245,236,231,1) 50%);    
+}
+
+/*estilo de los h controlar si corresponde*/
+h1 {
+    color: black;
+    font-size: 40px;
+}
+h2 {
+    text-align: center;
+    color: rgb(11, 9, 110);
+}
+h3 {
+    color: black;
+}
+
+
+/*la tipografia tiene un valor de 16px*/
+/*1rem = 16 px*/
+/*para adaptar el tamaño del proyecto en responsive*/
+/*para la clase pongo punto y sino etiqueta no*/
+/*estilos de header*/
+header {
+    display: none;
+}
+/*estilos de main*/
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main h2 {
+    color: #182941;
+    text-align: center;
+}
+main h2 span {
+    display: block;
+}
+main p {
+    text-align: center;
+    padding: 1rem;
+}
+main img {
+    margin: 0.3rem;
+    filter: drop-shadow(7px 5px 5px);
+}
+/*estilos de section*/
+section {
+    display: none;
+}
+/*estilos de footer*/
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+footer div h4 {
+    text-align: center;
+}
+footer div a img {
+    width: 1rem;
+}
+
+/*mq 800 para tablet 1024 para pc*/
+@media screen and (min-width:800px) {
+    /*estilo del contenedor principal*/
+    .contenedor {
+        display: grid;
+        height: 100vh;
+    }
+    /*agregado*/
+    header {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "img nav nav"
+            "h1 h1 h1";
+        justify-content: space-around;
+        align-items: center;    
+    }
+    header nav {
+        grid-area: nav;
+    } 
+    header h1 {
+        grid-area: h1;
+    } 
+    header img {
+        grid-area: img;
+    } 
+    /*fin agregado*/
+    /*        
+    header {
+        display: block;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    } 
+    */        
+    header nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+    }
+    header nav ul li {
+        margin: 10px;
+        padding: 10px;
+        display: inline-block ;
+        font-size: 0.9rem;
+        color: black;
+        position: relative;
+    }
+    header nav ul li a {
+        text-decoration: none;
+        color: black;
+    }
+    header img {
+        width: 25rem;
+    }
+    main {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-template-rows: 0.5fr 1fr 1fr;
+        grid-template-areas: 
+            "h2 img"
+            "p img"
+            "p-dos img";
+    }
+    main p {
+        grid-area: p;
+    }
+    main h2 {
+        grid-area: h2;
+    }
+    main .p-dos {
+        grid-area: p-dos;
+    }
+    main img {
+        grid-area: img;
+    }
+    /*estilos de section*/
+    section {
+        display: block;
+        display: flex;
+        background-color:#e0c5b5;
+    }
+    section div {
+        padding: 0.7rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section div img {
+        margin: 0.3rem;
+        width: 4rem;
+        filter: drop-shadow(2px 2px 2px);
+    }
+    section div p {
+        text-align: center;
+    }   
+}
+
+/*
+paleta de colores
+.color1 { #d5b19c };
+.color2 { #e0c5b5 };
+.color3 { #ead8ce };
+.color4 { #f5ece6 };
+.color5 { #ffffff };
+*/
+
+/*entrega anterior*/
+/*estilos de producto*/
+.conectores {
+    background-color: whitesmoke;
+}
+
+.producto {
+    background-color: rgb(150, 151, 175);
+    width: 200px;
+    height: 200px;
+    /*propiedad margin*/
+    margin: 10px 15px 20px 25px;
+    padding: 5px;
+    border: 2px solid rgb(0, 68, 95);
+    /*border-radius: 200px;*/
+    display: inline-block;
+}
+
+/*estilos de calidad*/
+.calidad {
+    background-color: whitesmoke; 
+}
+
+.certificados {
+    background-color: rgb(150, 151, 175);
+    width: 200px;
+    height: 250px;
+    margin: 10px 15px 20px 25px;
+    padding: 5px;
+    border: 2px solid rgb(0, 68, 95);
+    display: inline-block;
+}
+
+/*estilo contacto*/
+.formulario {
+    text-align: left;
+}
+
+.fixed {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;    
+}
