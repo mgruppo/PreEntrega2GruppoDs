@@ -30,11 +30,17 @@ h3 {
 /*para adaptar el tamaño del proyecto en responsive*/
 /*para la clase pongo punto y sino etiqueta no*/
 /*estilos de header*/
-/* oculto porque sino no funciona la hamburguesa
 header {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*para fila ordena al centro, para columna en flex lo ordena en el eje vertical*/
+    align-items: center;
+    padding: 1rem;
 }
-*/
+header img {
+    width: 25%;
+}
+/*estilos de quienes somos*/
 /*estilos de main*/
 main {
     display: flex;
@@ -53,13 +59,17 @@ main p {
     padding: 1rem;
 }
 main img {
+    width: 95%;
+    height: 95%;
     margin: 0.3rem;
     filter: drop-shadow(7px 5px 5px);
+    width: 95%;
 }
 /*estilos de section*/
 section {
     display: none;
 }
+/*fin estilos de quienes somos*/
 /*estilos de footer*/
 footer {
     display: flex;
@@ -75,7 +85,7 @@ footer div a img {
 }
 
 /*mq 800 para tablet 1024 para pc*/
-@media screen and (min-width:800px) {
+@media screen and (min-width:1024px) {
     /*estilo del contenedor principal*/
     .contenedor {
         display: grid;
@@ -85,10 +95,10 @@ footer div a img {
     header {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr 0.5fr;
         grid-template-areas: 
-            "img nav nav"
-            "h1 h1 h1";
+            "h1 img nav"
+            "h1 img nav";
         justify-content: space-around;
         align-items: center;    
     }
@@ -99,8 +109,8 @@ footer div a img {
         grid-area: h1;
     } 
     header img {
-        grid-area: img;
-    } 
+        grid-area: img;   
+    }  
     /*fin agregado*/
     /*        
     header {
