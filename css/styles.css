@@ -15,15 +15,13 @@ body {
 
 /*estilo de los h controlar si corresponde*/
 h1 {
-    color: black;
-    font-size: 40px;
+    color: rgb(11, 9, 110)
 }
-h2 {
-    text-align: center;
+h2 { 
     color: rgb(11, 9, 110);
 }
 h3 {
-    color: black;
+    color: rgb(11, 9, 110);
 }
 
 
@@ -32,9 +30,11 @@ h3 {
 /*para adaptar el tamaño del proyecto en responsive*/
 /*para la clase pongo punto y sino etiqueta no*/
 /*estilos de header*/
+/* oculto porque sino no funciona la hamburguesa
 header {
     display: none;
 }
+*/
 /*estilos de main*/
 main {
     display: flex;
