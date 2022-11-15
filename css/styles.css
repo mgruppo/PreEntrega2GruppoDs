@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-/*se utiliza mobile first*/
+/*se utiliza mobile first, tomando como base iphone se*/
 /*estilos generales*/
 body {
     /*background-color: #eceef3;*/
@@ -14,16 +14,26 @@ body {
 }
 
 /*estilo de los h controlar si corresponde*/
-h1 {
+.titulo-1 {
     color: rgb(11, 9, 110)
 }
-h2 { 
-    color: rgb(11, 9, 110);
+.titulo-2 { 
+    font-size: 1.2rem;
+    text-align: center;
+    color: #182941;
 }
 h3 {
     color: rgb(11, 9, 110);
 }
+.parrafo-principal {
+    font-size: 0.9rem;
+    text-align: center;
+}
 
+.parrafo-secundario {
+    font-size: 0.8rem;
+    text-align: center;
+}
 
 /*la tipografia tiene un valor de 16px*/
 /*1rem = 16 px*/
@@ -40,35 +50,45 @@ header {
 header img {
     width: 25%;
 }
-/*estilos de quienes somos*/
-/*estilos de main*/
-main {
+/*estilos de index*/
+.principal {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-main h2 {
-    color: #182941;
-    text-align: center;
+.principal iframe {
+    width: 95%;
+    height: 95%;
+    margin: 1rem;
 }
-main h2 span {
+
+/*estilos de quienes somos*/
+.quienes-somos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quienes-somos .titulo-2 span {
     display: block;
+    font-size: 1.6rem;
 }
-main p {
+.quienes-somos p {
     text-align: center;
     padding: 1rem;
 }
-main img {
+
+.quienes-somos img {
     width: 95%;
     height: 95%;
     margin: 0.3rem;
     filter: drop-shadow(7px 5px 5px);
     width: 95%;
 }
-/*estilos de section*/
-section {
+.section-paginas {
     display: none;
 }
+
 /*fin estilos de quienes somos*/
 /*estilos de footer*/
 footer {
@@ -77,8 +97,9 @@ footer {
     align-items: center;
     padding: 1rem;
 }
-footer div h4 {
+.texto-derechos {
     text-align: center;
+    font-size: 0.7rem;
 }
 footer div a img {
     width: 1rem;
@@ -142,45 +163,49 @@ footer div a img {
         width: 10rem;
     }
     
-    main {
+    .quienes-somos {
         display: grid;
-        grid-template-columns: 2fr 2fr;
-        grid-template-rows: 0.5fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.5fr 0.5fr 0.5fr;
         grid-template-areas: 
             "h2 img"
             "p img"
             "p-dos img";
     }
-    main p {
+    .quienes-somos p {
         grid-area: p;
     }
-    main h2 {
+    .quienes-somos h2 {
         grid-area: h2;
     }
-    main .p-dos {
+    .quienes-somos .p-dos {
         grid-area: p-dos;
     }
-    main img {
+    .quienes-somos img {
         grid-area: img;
     }
     /*estilos de section*/
-    section {
+    .section-paginas {
         display: block;
         display: flex;
         background-color:#e0c5b5;
     }
-    section div {
+    .section-paginas div {
         padding: 0.7rem;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    section div img {
+    .section-paginas div img {
         margin: 0.3rem;
         width: 4rem;
         filter: drop-shadow(2px 2px 2px);
+        animation-name: img-movimiento;
+        animation-iteration-count: infinite;
+        animation-duration: 4s;
+        animation-direction:alternate;
     }
-    section div p {
+    .section-paginas div p {
         text-align: center;
     }   
 }
@@ -232,10 +257,30 @@ paleta de colores
     text-align: left;
 }
 
+/*Boton de whatsapp*/
 .fixed {
     position: fixed;
     bottom: 10px;
     right: 10px;
     width: 50px;
-    height: 50px;    
+    height: 50px;
+    animation-name: img-movimiento;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-direction: alternate-reverse;        
+}
+/*para efecto cuando hacen click*/
+.fixed:hover {
+    box-shadow: 1px 1px 2px black;
+    transform: scale(0.9);
+}
+/*efecto constante de click*/
+@keyframes img-movimiento {
+    to {
+        transform: scale(1);
+    }
+
+    from {
+        transform: scale(1.2);
+    }
 }
