@@ -51,9 +51,8 @@ h3 {
 header {
     display: flex;
     flex-direction: column;
-    justify-content: center; /*para fila ordena al centro, para columna en flex lo ordena en el eje vertical*/
-    align-items: center;
-    padding: 1rem;
+    justify-content:space-evenly; /*para fila ordena al centro, para columna en flex lo ordena en el eje vertical*/
+    align-items:center;
 }
 
 header img {
@@ -118,26 +117,15 @@ footer div a img {
         height: 100vh;
     }
     /*estilo de header*/
+    /* no aplicarian porque estan arriba
     header {
-        display: grid;
-        grid-template-columns: 0.5fr 1fr 1fr;
-        grid-template-rows: 0.5fr 0.5fr 0.5fr;
-        grid-template-areas: 
-            "img nav nav"
-            "img nav nav"
-            "h1 h1 h1";
-        justify-content: space-around;
-        align-items: center;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
     }
-    header nav {
-        grid-area: nav;
-    } 
-    header h1 {
-        grid-area: h1;
-    } 
-    header img {
-        grid-area: img;   
-    }  
+    */
 
     /*        
     header {
@@ -164,9 +152,12 @@ footer div a img {
         text-decoration: none;
         color: black;
     }
+    /*
     header img {
-        width: 10rem;
+        width: 95%;
     }
+    */
+    
     /*estilos de index*/
     .principal {
         display: grid;
