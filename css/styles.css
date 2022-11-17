@@ -4,59 +4,67 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /*se utiliza mobile first, tomando como base iphone se*/
 /*estilos generales*/
 body {
-    /*background-color: #eceef3;*/
     font-family: 'Roboto', sans-serif;
-    background: rgb(224,197,181);
-    background: linear-gradient(90deg, rgba(224,197,181,1) 10%, rgba(234,216,206,1) 35%, rgba(245,236,231,1) 50%);    
-}
-/*estilo de menu bt*/
-.navbar-nav {
-    font-family: 'Roboto', sans-serif; 
-    padding: 0.1rem;
-    text-align: center;
-}
-.active {
-    font-weight: bold;
-    text-decoration: underline; 
+    background: rgb(224, 197, 181);
+    background: linear-gradient(90deg, rgba(224, 197, 181, 1) 10%, rgba(234, 216, 206, 1) 35%, rgba(245, 236, 231, 1) 50%);
 }
 
 /*estilo de las tipografias*/
 .titulo-1 {
-    color: rgb(11, 9, 110)
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #2b425f;
+    text-shadow: 0.7px 0.5px 0.5px #2b425f;
 }
-.titulo-2 { 
+
+.titulo-2 {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #29547b;
+    text-shadow: 0.5px 0.2px 0.2px #29547b;
+}
+
+.titulo-3 {
     font-size: 1.2rem;
     text-align: center;
-    color: #182941;
+    color: #29547b;
+    margin: 0.5rem;
+    text-shadow: 0.5px 0.2px 0.2px #29547b;
 }
-h3 {
-    color: rgb(11, 9, 110);
-}
+
 .parrafo-principal {
     font-size: 0.9rem;
     text-align: center;
 }
+
 .parrafo-secundario {
     font-size: 0.8rem;
     text-align: center;
 }
-/*la tipografia tiene un valor de 16px*/
-/*1rem = 16 px*/
-/*para adaptar el tamaño del proyecto en responsive*/
-/*para la clase pongo punto y sino etiqueta no*/
+
 /*estilos de header*/
 header {
     display: flex;
     flex-direction: column;
-    justify-content:space-evenly; /*para fila ordena al centro, para columna en flex lo ordena en el eje vertical*/
-    align-items:center;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-header img {
-    width: 10%;
+/*estilo de menu bt*/
+.navbar-nav {
+    font-family: 'Roboto', sans-serif;
+    padding: 0.1rem;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.active {
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 /*estilos de index*/
@@ -65,25 +73,35 @@ header img {
     flex-direction: column;
     align-items: center;
 }
+
 .principal iframe {
     width: 95%;
     height: 95%;
     margin: 1rem;
 }
+
 /*estilos de quienes somos*/
 .quienes-somos {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .quienes-somos .titulo-2 span {
     display: block;
-    font-size: 1.6rem;
+    font-size: 2rem;
+    font-weight: bold;
 }
+
 .quienes-somos p {
     text-align: center;
     padding: 1rem;
 }
+
+.quienes-somos .p-dos span {
+    font-weight: bold;
+}
+
 .quienes-somos img {
     width: 95%;
     height: 95%;
@@ -91,10 +109,11 @@ header img {
     filter: drop-shadow(7px 5px 5px);
     width: 95%;
 }
-.section-paginas {
+
+.quienes-imagen {
     display: none;
 }
-/*fin estilos de quienes somos*/
+
 /*estilos de footer*/
 footer {
     display: flex;
@@ -102,122 +121,102 @@ footer {
     align-items: center;
     padding: 1rem;
 }
+
 .texto-derechos {
     text-align: center;
     font-size: 0.7rem;
 }
+
 footer div a img {
     width: 1rem;
 }
-/*mq 800 para tablet 1024 para pc*/
+
+/*se trabaja con la mq 1024 para pc*/
 @media screen and (min-width:1024px) {
+
     /*estilo del contenedor principal*/
     .contenedor {
         display: grid;
         height: 100vh;
     }
-    /*estilo de header*/
-    /* no aplicarian porque estan arriba
-    header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    }
-    */
 
-    /*        
-    header {
-        display: block;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    } 
-    */        
-    header nav ul {
-        list-style: none;
-        display: flex;
-        gap: 1rem;
-    }
-    header nav ul li {
-        margin: 10px;
-        padding: 10px;
-        display: inline-block ;
-        font-size: 0.9rem;
-        color: black;
-        position: relative;
-    }
-    header nav ul li a {
-        text-decoration: none;
-        color: black;
-    }
-    /*
-    header img {
-        width: 95%;
-    }
-    */
-    
     /*estilos de index*/
     .principal {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-template-areas: 
+        grid-template-areas:
             "h2-1 iframe"
             "p iframe"
             "h2-2 iframe"
             "p-dos iframe";
     }
+
     .principal .h2-1 {
         grid-area: h2-1;
-    } 
+    }
+
     .principal .h2-2 {
         grid-area: h2-2;
-    }        
+    }
+
     .principal p {
         grid-area: p;
     }
+
     .principal .p-dos {
         grid-area: p-dos;
     }
+
     .principal iframe {
         grid-area: iframe;
-    }    
+    }
+
     /*estilos de quienes somos*/
     .quienes-somos {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 0.5fr 0.5fr 0.5fr;
-        grid-template-areas: 
+        grid-template-areas:
             "h2 img"
             "p img"
             "p-dos img";
     }
+
     .quienes-somos p {
         grid-area: p;
     }
+
     .quienes-somos h2 {
         grid-area: h2;
     }
+
     .quienes-somos .p-dos {
         grid-area: p-dos;
     }
+
     .quienes-somos img {
         grid-area: img;
     }
+
     /*estilos de section*/
     .section-paginas {
         display: block;
         display: flex;
-        background-color:#e0c5b5;
+        background-color: #e0c5b5;
     }
+
+    .quienes-imagen {
+        display: block;
+    }
+
     .section-paginas div {
         padding: 0.7rem;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
     .section-paginas div img {
         margin: 0.3rem;
         width: 4rem;
@@ -225,22 +224,75 @@ footer div a img {
         animation-name: img-movimiento;
         animation-iteration-count: infinite;
         animation-duration: 4s;
-        animation-direction:alternate;
+        animation-direction: alternate;
     }
+
     .section-paginas div p {
         text-align: center;
-    }   
-}
-/*
-paleta de colores
-.color1 { #d5b19c };
-.color2 { #e0c5b5 };
-.color3 { #ead8ce };
-.color4 { #f5ece6 };
-.color5 { #ffffff };
-*/
+    }
 
-/*entrega anterior*/
+    /*estilos de calidad*/
+    .calidad {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.1fr 0.1fr 1fr 0.1fr;
+        grid-template-areas:
+            "titulo-2 titulo-2"
+            "parrafo-principal parrafo-principal"
+            "div-calidad div-calidad"
+            "parrafo-secundario parrafo-secundario";
+    }
+
+    .calidad .titulo-2 {
+        grid-area: titulo-2;
+    }
+
+    .calidad .div-calidad {
+        grid-area: div-calidad;
+    }
+
+    .calidad .parrafo-principal {
+        grid-area: parrafo-principal;
+    }
+
+    .calidad .parrafo-secundario {
+        grid-area: parrafo-secundario;
+        margin: 2rem;
+    }
+}
+
+/*Animaciones*/
+/*Boton de whatsapp*/
+.fixed {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    animation-name: img-movimiento;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-direction: alternate-reverse;
+}
+
+/*efecto constante boton whatsapp*/
+@keyframes img-movimiento {
+    to {
+        transform: scale(1);
+    }
+
+    from {
+        transform: scale(1.2);
+    }
+}
+
+/*para efecto cuando hacen click menu*/
+.nav-item:hover {
+    text-shadow: 0.7px 0.5px 1px black;
+    transform: scale(1.1);
+}
+
+/*estilos de entrega anterior que no entran dentro de la segunda pre entrega*/
 /*estilos de producto*/
 .conectores {
     background-color: whitesmoke;
@@ -250,23 +302,6 @@ paleta de colores
     background-color: rgb(150, 151, 175);
     width: 200px;
     height: 200px;
-    /*propiedad margin*/
-    margin: 10px 15px 20px 25px;
-    padding: 5px;
-    border: 2px solid rgb(0, 68, 95);
-    /*border-radius: 200px;*/
-    display: inline-block;
-}
-
-/*estilos de calidad*/
-.calidad {
-    background-color: whitesmoke; 
-}
-
-.certificados {
-    background-color: rgb(150, 151, 175);
-    width: 200px;
-    height: 250px;
     margin: 10px 15px 20px 25px;
     padding: 5px;
     border: 2px solid rgb(0, 68, 95);
@@ -278,30 +313,6 @@ paleta de colores
     text-align: left;
 }
 
-/*Boton de whatsapp*/
-.fixed {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    width: 50px;
-    height: 50px;
-    animation-name: img-movimiento;
-    animation-iteration-count: infinite;
-    animation-duration: 2s;
-    animation-direction: alternate-reverse;        
-}
-/*efecto constante boton whatsapp*/
-@keyframes img-movimiento {
-    to {
-        transform: scale(1);
-    }
-
-    from {
-        transform: scale(1.2);
-    }
-}
-/*para efecto cuando hacen click menu*/
-.nav-item:hover {
-    text-shadow: 0.7px 0.5px 1px black;
-    transform: scale(1.1);
+.imagen-redes {
+    width: 5%;
 }
